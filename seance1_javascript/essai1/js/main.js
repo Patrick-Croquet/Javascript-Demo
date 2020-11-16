@@ -9,5 +9,5 @@ alert(result);
 console.log(result);
 
 document.open();
-document.write(result);
+document.write('<div id="monid">'+ result +'</div>');
 document.close();

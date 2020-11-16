@@ -23,3 +23,23 @@ alert(cousinsString);
 let myArray = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
 
 alert(myArray.length); //affiche 5 
+
+for(let index=0, items=myArray.length; index < items;index++){
+ alert(myArray[index]);
+}
+
+//let family = {}; //objet vide
+
+let family = { //objet littéral
+    self: 'Patrick',
+    sister: 'Laurence',
+    brother: 'Ludovic',
+    cousin_1: 'Pauline',  
+    cousin_2: 'Guillaume'
+};
+
+alert(family['cousin_2']); //affiche Guillaume
+alert(family['brother']); //affiche Ludovic
+
+alert(family.cousin_2); //affiche Guillaume
+alert(family.brother); //affiche Ludovic
