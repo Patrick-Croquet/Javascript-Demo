@@ -19,12 +19,13 @@ alert(cousinsArray); //Retire Clarisse
 cousinsString = cousinsArray.join(' ');
 alert(cousinsString);
 
-let myArray2 = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
 
-alert(myArray2.length); //affiche 5 
+let myArray = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
 
-for(let index=0, items=myArray2.length; index < items;index++){
- alert(myArray2[index]);
+alert(myArray.length); //affiche 5 
+
+for(let index=0, items=myArray.length; index < items;index++){
+ alert(myArray[index]);
 }
 
 //let family = {}; //objet vide
