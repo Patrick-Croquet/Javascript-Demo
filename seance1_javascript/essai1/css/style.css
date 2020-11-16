@@ -1,5 +1,6 @@
 #monid{
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
+    background: aqua;
+    width: 150px;
+    height: 50px;
+    text-align: center;
 }
