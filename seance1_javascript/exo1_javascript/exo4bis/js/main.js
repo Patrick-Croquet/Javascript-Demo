@@ -1,14 +1,11 @@
-let a=2;
-
-do{
-    res=true;
-    for(i=2; i<=a/2;i++){
+for(a=2; a<=100; a++){
+    resultat=true;
+    for(i=2;i<=a/2; i++){
         if(a%i===0){
-            res=false;
+            resultat=false;
         }
     }
-    if(res===true){
+    if (resultat===true){
         document.write(a," ");
     }
-    a++
-} while(a<=100);
+}
