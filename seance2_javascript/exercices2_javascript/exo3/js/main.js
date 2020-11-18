@@ -9,7 +9,7 @@ let ms = 0, s = 0, mn = 0, h = 0;
 
 function start(){
     t = setInterval(update_chrono,100);
-    btn_start.disabled = true;
+    btn_start.disabled = true; //désactive le bouton start
 }   
 
 // fonction update_chrono
@@ -40,14 +40,14 @@ function update_chrono() {
 
 function stop() {
     clearInterval(t); // Arrête le cadencement
-    btn_start.disabled=false;
+    btn_start.disabled=true; //désactive le bouton start
 }
 
 // fonction reset 
 
 function reset() {
     clearInterval(t); // Arrête le cadencement
-    btn_start.disabled=false;
+    btn_start.disabled=false; //réactive le bouton start
     ms=0,s=0,mn=0,h=0;
 
     sp[0].innerHTML =h+" h";
