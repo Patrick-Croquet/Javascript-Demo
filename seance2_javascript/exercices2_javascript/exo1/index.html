@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exo 1</title>
+
+</head>
+
+<body>
+<div id="parameters">    
+    <table border ="1">
+        <tr>
+            <td>couleur de fond (rgb)</td>
+            <td><input type="range" min="0" max="255" step="5" name="color" value="0" onchange="update(this)"></td>
+        </tr>
+        <tr>
+            <td>padding</td>
+            <td><input type="range" min="0" max="255" step="5" name="padding" value="0" onchange="update(this)"></td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td><input type="range" min="0" max="200" step="50" name="height" value="0" onchange="update(this)"></td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td><input type="range" min="0" max="200" step="50" name="width" value="0" onchange="update(this)"></td>
+        </tr>
+        <tr>
+            <td>arrondi</td>
+            <td><input type="range" min="0" max="30" step="5" name="radius" value="0" onchange="update(this)"></td>
+        </tr>
+        <tr>
+            <td>rotation</td>
+            <td><input type="range" min="0" max="180" step="5" name="rotation" value="0" onchange="update(this)"></td>
+        </tr>                                          
+        </table>   
+</div>
+
+<div id="text">
+    <h1 id="p1">Titre de mon Exo1</h1>
+</div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

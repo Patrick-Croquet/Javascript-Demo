@@ -1,0 +1,28 @@
+.chronometre {
+    margin: auto;
+    text-align: center;
+    width: 400px;
+}
+
+.time {
+    margin: auto;
+    width: 400px;
+    text-align: center;
+    border: 1.5px solid black;
+    font-size: 18px;
+}
+
+.chronometre button {
+    background:teal;
+    height:20px;
+    width:100px;
+    border:none;
+    box-shadow:3px 3px 12px #999;
+    font:bold 13px Arial;
+    color:white;
+    border-radius:20px/10px;
+    margin-top:50px;
+    margin-right:10px;
+
+}
+
