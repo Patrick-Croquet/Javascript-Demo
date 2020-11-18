@@ -39,14 +39,14 @@ function update_chrono() {
 // fonction stop
 
 function stop() {
-    clearInterval(t);
+    clearInterval(t); // Arrête le cadensement
     btn_start.disabled=false;
 }
 
 // fonction reset 
 
 function reset() {
-    clearInterval(t);
+    clearInterval(t); // Arrête le cadensement
     btn_start.disabled=false;
     ms=0,s=0,mn=0,h=0;
 
