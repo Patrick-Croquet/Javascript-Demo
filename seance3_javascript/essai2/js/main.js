@@ -30,11 +30,12 @@ seb.friends.push(new Person('Thomas','20','m','aîné','Développeur',[]));
 alert(seb.friends[2].nick);
 
 seb.addFriend('William','19','m','aîné','Développeur',[]);
-alert(seb.friends[3].nick + ' ' + seb.friends[3].age);
+alert(seb.friends[3].nick + ' a ' + seb.friends[3].age +' ans.');
 
 
 let fruitArray = [];
 fruitArray.push('Orange');
+alert(fruitArray[0]);
 
 // On définit un objet Chien
 function Chien(name, color, age, size){
@@ -57,7 +58,7 @@ Chien.prototype.AddSize = function(size){
 let labrador = new Chien('Wil','sable',3,[]);
 let patou = new Chien('Ben','blanc',2,[]);
 
-alert(labrador.name + ' ' + patou.name);
+alert(labrador.name + ' et ' + patou.name);
 
 labrador.AddSize('15'); //première visite
 labrador.AddSize('17'); //deuxième visite
@@ -65,4 +66,4 @@ labrador.AddSize('18'); //Troisième visite
 
 labrador.size[0] = '14';
 labrador.age = '4';
-alert(labrador.size[0]); // Affiche 14
+alert(labrador.name + ' meure ' + labrador.size[0] + ' cm.'); // Affiche 14
