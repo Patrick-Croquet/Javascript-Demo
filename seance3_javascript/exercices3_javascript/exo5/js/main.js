@@ -7,7 +7,7 @@ function upperCase(str) {
     for(let i=0; i<array1.length; i++){
         // array2[i]= array1[i].charAt(0).toUpperCase()+ array1[i].substr(1);
         
-        array2.push(array1[i].charAt(0).toUpperCase() + array1[i].slice(1));    
+        array2.push(array1[i].charAt(0).toUpperCase() + array1[i].slice(1)); // Affiche Le Corbeau Et Le Renard    
     }
 
     return array2.join(' ');
