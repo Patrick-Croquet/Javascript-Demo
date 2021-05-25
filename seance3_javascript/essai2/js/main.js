@@ -66,4 +66,4 @@ labrador.AddSize('18'); //Troisième visite
 
 labrador.size[0] = '14';
 labrador.age = '4';
-alert(labrador.name + ' meure ' + labrador.size[0] + ' cm.'); // Affiche 14
+alert(labrador.name + ' mesure ' + labrador.size[0] + ' cm.'); // Affiche 14

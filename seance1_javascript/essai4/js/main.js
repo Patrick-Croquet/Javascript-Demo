@@ -32,7 +32,7 @@ while(number < 10) { // condition
     alert(number);
     number ++; //incrémention
 }
-alert(number); // affiche 10
+//alert(number); // affiche 10
                // les instructions sont exécutées que si la condtion est vraie.
 
 // do {
