@@ -130,4 +130,5 @@ let calcul1 = (function(){   //fonction anonyme
                 let var1 = 2, var2 = 3;
                 return var1*var2;
             })();
-alert(calcul1);            
+alert(calcul1);  
+          
