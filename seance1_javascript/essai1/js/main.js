@@ -1,9 +1,10 @@
 let start = 'Bonjour ', 
-    name, end = ' !',
+    prenom,
+    end = ' !',
     result;
 
-name = prompt('Quel est votre prénom ?');
-result = start + name + end;
+prenom = prompt('Quel est votre prénom ?');
+result = start + prenom + end;
 alert(result);
 
 console.log(result);
