@@ -105,15 +105,15 @@
 // number_2a = parseInt(prompt("Votre deuxième nombre : "));
 // calculate2(number_1a,number_2a);
 
-// class Calcul {
-//     constructor(var1, var2) {
-//       this.produit = var1 * var2;
-//     }
-//   }
+class Calcul {
+    constructor(var1, var2) {
+      this.produit = var1 * var2;
+    }
+  }
   
-  //console.log(new Calcul(4, 3).produit);
-//   alert(new Calcul(4, 3).produit);
-  // expected output: 12
+  console.log(new Calcul(4, 3).produit);
+  alert(new Calcul(4, 3).produit);
+  //expected output: 12
 
 // let msg2 = "Hello word!";
 // function sayHello2(){

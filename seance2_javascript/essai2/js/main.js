@@ -1,5 +1,5 @@
-let query = document.querySelector('#menu .item span');
-alert(query.innerHTML); //Affiche Élément 1
+// let query = document.querySelector('#menu .item span');
+// alert(query.innerHTML); //Affiche Élément 1
 
 let queryAll = document.querySelectorAll('#menu .item span');
 alert(queryAll.length); //Affiche 2

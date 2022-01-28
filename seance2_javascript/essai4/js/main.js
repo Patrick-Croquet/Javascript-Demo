@@ -1,1 +1,1 @@
-document.getElementById('myColoredDiv').className = 'blue';
+document.getElementById('myColoredDiv').className = 'rose';
