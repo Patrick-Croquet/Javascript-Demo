@@ -62,7 +62,7 @@
 
 // showMsg(); //on exécute le code de la fonction showMsg()
 
-// let msg = "Hello word!";
+// let msg = "Hello Patrik!";
 // function sayHello(){
 //     alert(msg);
 // }
@@ -71,8 +71,8 @@
 
 // let var1 = 2, var2 = 3; // 2 variables globales
 // function calculate(){
-//     alert(var1 * var2); // affiche 6
-// }
+//      alert(var1 * var2); // affiche 6
+//  }
 
 // calculate();
 // alert(var1); // affiche 2
@@ -94,26 +94,44 @@
 //     alert("L'argument est :" + arg) // Affiche L'argument est : C'est bien un argument
 // }
 // myfunction("C'est bien un argument");
-
+// myfunction("C'est un nouvel argument");
 
 // function calculate2(var1, var2) {
 //     alert(var1 * var2); // affiche 6
 // }
+
+// calculate2(2,3);
 
 // let number_1a, number_2a;
 // number_1a = parseInt(prompt("Votre premier nombre : "));
 // number_2a = parseInt(prompt("Votre deuxième nombre : "));
 // calculate2(number_1a,number_2a);
 
-class Calcul {
-    constructor(var1, var2) {
-      this.produit = var1 * var2;
-    }
-  }
+// class Calcul {
+//   constructor(var1, var2) {
+//     this.produit = var1 * var2;
+//   }
+// }
+
+// console.log(new Calcul(3, 2).produit);
+// alert(new Calcul(3, 2).produit);
+//expected output: 12
+
+// class Calcul {
+//     constructor(var1, var2) {
+//       this.produit = var1 * var2;
+//       this.addition = var1 + var2;
+//     }
+//   }
   
-  console.log(new Calcul(4, 3).produit);
-  alert(new Calcul(4, 3).produit);
-  //expected output: 12
+// let number_1a, number_2a;
+// number_1a = parseInt(prompt("Votre premier nombre : "));
+// number_2a = parseInt(prompt("Votre deuxième nombre : "));
+
+//   console.log(new Calcul(number_1a, number_2a).produit);
+//   alert(new Calcul(number_1a, number_2a).produit);
+//   alert(new Calcul(number_1a, number_2a).addition);
+//   //expected output: 12
 
 // let msg2 = "Hello word!";
 // function sayHello2(){
@@ -121,14 +139,14 @@ class Calcul {
 // }
 // sayHello2();
 
-// let sayHello3 = (function(){   //fonction anonyme
-//                 return "Hello word!";
-//                 })();
-// alert(sayHello3); // affiche Hello word! 
+let sayHello3 = (function(){   //fonction anonyme
+                return "Hello word!";
+                })();
+alert(sayHello3); // affiche Hello word! 
 
-let calcul1 = (function(){   //fonction anonyme
-                let var1 = 2, var2 = 3;
-                return var1*var2;
-            })();
-alert(calcul1);  
+// let calcul1 = (function(){   //fonction anonyme
+//                 let var1 = 2, var2 = 3;
+//                 return var1*var2;
+//             })();
+// alert(calcul1);  
           

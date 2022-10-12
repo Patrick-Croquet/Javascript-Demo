@@ -1,5 +1,4 @@
-let a=2;
-
+a=2;
 do{
     res=true;
     for(i=2; i<=a/2;i++){

@@ -1,4 +1,4 @@
-document.write("Les nombres premiers compris entre 0 et 100 sont :<br>");
+// document.write("Les nombres premiers compris entre 0 et 100 sont :<br>");
 			/* 0 et 1 ne sont pas des nombres premiers */
 			// On cherche les nombres premiers jusqu'à max
 			var max = 100;

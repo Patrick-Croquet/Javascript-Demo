@@ -23,10 +23,12 @@ element.style.backgroundColor = "#FFFF00";
 // propriété onclick
 // element.onclick = function(){
 //     console.log(i);
-//         i++;
+//         // i++;
+//         element.style.backgroundColor = "#00FF00"; 
 //         interval = setInterval(function change() { 
 //             element.innerHTML = i;
-//             if (i%10 == 0) {
+//             if (i%11 == 10) {
+//             //alert("coucou");
 //             clearInterval(interval);
 //             }
 //             else {
@@ -39,10 +41,11 @@ element.style.backgroundColor = "#FFFF00";
 // fonction fléchée
 element.onclick = function(){
     console.log(i);
-        i++;
+        //i++;
+        element.style.backgroundColor = "#00FF00"; 
         interval = setInterval( ()=> { 
             element.innerHTML = i;
-            if (i%10 == 0) {
+            if (i%11 == 10) {
             clearInterval(interval);
             }
             else {
