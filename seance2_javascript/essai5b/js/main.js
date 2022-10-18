@@ -41,32 +41,14 @@ element.style.backgroundColor = "#FFFF00";
 
 // fonction fléchée
 //element.addEventListener('click', function(){
-//element.onclick = function(){
-//     console.log(i);
-//         //i++;
-//         element.style.backgroundColor = "#00FF00"; 
-//         interval = setInterval( ()=> { 
-//             console.log(this); // this est l'objet button
-//             element.innerHTML = i;
-//             if (i%11 == 10) {
-//             clearInterval(interval);
-//             }
-//             else {
-//                 i++;
-//             }
-                  
-//         },1000);
-// };   
-
-//fonction fléchée
-element.addEventListener('click', (e) => {
+element.onclick = function(){
+    let i = 0;
     let interval;
-    console.log(i);
-    console.log(e.target); // e.target est l'objet button
-        //i++;
-        e.target.style.backgroundColor = "#00FF00"; 
+        // console.log(i);
+        console.log(this); // this est l'objet button
+        this.style.backgroundColor = "#00FF00"; 
         interval = setInterval( ()=> { 
-            e.target.innerHTML = i;
+            this.innerHTML = i;
             if (i%11 == 10) {
             clearInterval(interval);
             }
@@ -75,4 +57,24 @@ element.addEventListener('click', (e) => {
             }
                   
         },1000);
-});
+};   
+
+//fonction fléchée
+// element.addEventListener('click', (e) => {
+//     let i = 0;
+//     let interval;
+//     console.log(i);
+//     console.log(e.target); // e.target est l'objet button
+//         //i++;
+//         e.target.style.backgroundColor = "#00FF00"; 
+//         interval = setInterval( ()=> { 
+//             e.target.innerHTML = i;
+//             if (i%11 == 10) {
+//             clearInterval(interval);
+//             }
+//             else {
+//                 i++;
+//             }
+                  
+//         },1000);
+// });
