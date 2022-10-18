@@ -1,4 +1,4 @@
-let element = document.getElementById('clickme');
+const element = document.getElementById('clickme');
 let i = 0;
 let interval;
 
@@ -26,6 +26,7 @@ element.style.backgroundColor = "#FFFF00";
 //         // i++;
 //         element.style.backgroundColor = "#00FF00"; 
 //         interval = setInterval(function change() { 
+//             console.log(this);
 //             element.innerHTML = i;
 //             if (i%11 == 10) {
 //             //alert("coucou");
@@ -39,12 +40,33 @@ element.style.backgroundColor = "#FFFF00";
 // }; 
 
 // fonction fléchée
-element.onclick = function(){
+//element.addEventListener('click', function(){
+//element.onclick = function(){
+//     console.log(i);
+//         //i++;
+//         element.style.backgroundColor = "#00FF00"; 
+//         interval = setInterval( ()=> { 
+//             console.log(this); // this est l'objet button
+//             element.innerHTML = i;
+//             if (i%11 == 10) {
+//             clearInterval(interval);
+//             }
+//             else {
+//                 i++;
+//             }
+                  
+//         },1000);
+// };   
+
+//fonction fléchée
+element.addEventListener('click', (e) => {
+    let interval;
     console.log(i);
+    console.log(e.target); // e.target est l'objet button
         //i++;
-        element.style.backgroundColor = "#00FF00"; 
+        e.target.style.backgroundColor = "#00FF00"; 
         interval = setInterval( ()=> { 
-            element.innerHTML = i;
+            e.target.innerHTML = i;
             if (i%11 == 10) {
             clearInterval(interval);
             }
@@ -53,4 +75,4 @@ element.onclick = function(){
             }
                   
         },1000);
-};   
+});
