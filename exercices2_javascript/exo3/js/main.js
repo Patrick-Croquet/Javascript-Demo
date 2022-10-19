@@ -15,7 +15,7 @@ function start(){
 // fonction update_chrono
 
 function update_chrono() {
-    ms+=1;
+    ms+=1; // incrémentation en dixième de seconde
 
     if(ms==10){
         ms=1;
@@ -40,7 +40,7 @@ function update_chrono() {
 
 function stop() {
     clearInterval(t); // Arrête le cadencement
-    btn_start.disabled=true; //désactive le bouton start
+    //btn_start.disabled=true; //désactive le bouton start
 }
 
 // fonction reset 
