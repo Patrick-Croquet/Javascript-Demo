@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul du Périmètre d'un Polygone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur de Périmètre</h1>
+        <label for="sides">Entrez les longueurs des côtés du polygone, séparées par des virgules :</label>
+        <input type="text" id="sides" placeholder="Exemple: 5,10,15">
+        <button onclick="calculatePerimeter()">Calculer le Périmètre</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        'use strict';
+
+        function calculerPerimetre() {
+            const args = Array.from(arguments);
+            let typeForme;
+            let perimetre;
+
+            switch (args.length) {
+                case 0:
+                    console.error('Erreur : Aucun paramètre fourni.');
+                    return 'Erreur : Aucun paramètre fourni.';
+                case 1:
+                    typeForme = 'Carré';
+                    perimetre = 4 * args[0];
+                    break;
+                case 2:
+                    typeForme = 'Rectangle';
+                    perimetre = 2 * (args[0] + args[1]);
+                    break;
+                case 3:
+                    typeForme = 'Triangle';
+                    perimetre = args[0] + args[1] + args[2];
+                    break;
+                default:
+                    typeForme = `Polygone à ${args.length} côtés`;
+                    perimetre = args.reduce((acc, val) => acc + val, 0);
+            }
+
+            const resultat = `Type de forme: ${typeForme}<br>Périmètre: ${perimetre}`;
+            console.log(resultat);
+            document.getElementById('result').innerHTML = resultat;
+            return resultat;
+        }
+
+        function calculatePerimeter() {
+            const sidesInput = document.getElementById('sides').value;
+            const sidesArray = sidesInput.split(',').map(Number);
+
+            if (sidesArray.some(isNaN)) {
+                document.getElementById('result').innerHTML = 'Erreur : Veuillez entrer des nombres valides.';
+                return;
+            }
+
+            calculerPerimetre.apply(null, sidesArray);
+        }
+    </script>
+</body>
+</html>

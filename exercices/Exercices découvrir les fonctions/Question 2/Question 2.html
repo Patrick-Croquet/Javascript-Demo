@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul du PGCD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur de PGCD</h1>
+        <label for="number1">Entrez le premier nombre :</label>
+        <input type="number" id="number1" required>
+        <label for="number2">Entrez le deuxième nombre :</label>
+        <input type="number" id="number2" required>
+        <button onclick="calculatePGCD()">Calculer le PGCD</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script src="pgcd.js"></script>
+    <script>
+        function getIntValue(elementId) {
+            const value = parseInt(document.getElementById(elementId).value);
+            if (isNaN(value)) {
+                throw new Error(`La valeur entrée dans ${elementId} n'est pas un nombre valide.`);
+            }
+            return value;
+        }
+
+        function calculatePGCD() {
+            try {
+                const num1 = getIntValue('number1');
+                const num2 = getIntValue('number2');
+                if (num1 === 0 || num2 === 0) {
+                    document.getElementById('result').textContent = 'Le dividende ou le diviseur ne peut pas être nul.';
+                    return;
+                }
+                const pgcd = euclideanAlgorithm(num1, num2);
+                document.getElementById('result').textContent = `Le PGCD de ${num1} et ${num2} est ${pgcd}.`;
+            } catch (error) {
+                document.getElementById('result').textContent = error.message;
+            }
+        }
+    </script>
+</body>
+</html>

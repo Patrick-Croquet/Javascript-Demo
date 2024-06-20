@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests du Calcul du PGCD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tests du Calcul du PGCD</h1>
+        <div class="result" id="testResults"></div>
+    </div>
+
+    <script src="pgcd.js"></script>
+    <script>
+        function testPGCD(a, b, expected) {
+            const result = euclideanAlgorithm(a, b);
+            const success = result === expected;
+            return `PGCD de ${a} et ${b} = ${result} (Attendu: ${expected}) - ${success ? 'Succès' : 'Échec'}<br>`;
+        }
+
+        function runTests() {
+            let testResults = '';
+            testResults += testPGCD(221, 782, 17);
+            testResults += testPGCD(590, 30, 10);
+            testResults += testPGCD(-21, -7, 7);
+            testResults += testPGCD(0, 5, 5);
+            testResults += testPGCD(5, 0, 5);
+            document.getElementById('testResults').innerHTML = testResults;
+        }
+
+        runTests();
+    </script>
+</body>
+</html>

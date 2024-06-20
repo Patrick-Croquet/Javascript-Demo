@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation de Tableau de Prénoms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manipulation de Tableau de Prénoms</h1>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        'use strict';
+
+        function manipulateNames() {
+            let names = ["Samuel", "Karim", "Nadia", "Catherine", "Kevin", "Laetitia", "Djamina", "Vincent", "Sacha"];
+
+            let initialLength = names.length;
+
+            names.push("Pierre");
+            let lengthAfterAddition = names.length;
+
+            
+            names.shift();
+            let lengthAfterRemoval = names.length;
+
+           
+            let kevinIndex = names.indexOf("Kevin");
+            if (kevinIndex !== -1) {
+                names[kevinIndex] = "Kévin";
+            }
+
+           
+            let vincentIndex = names.findIndex(name => name === "Vincent");
+            if (vincentIndex !== -1) {
+                names.splice(vincentIndex, 1);
+            }
+
+            
+            let forEachResult = "";
+            names.forEach((name, index) => {
+                forEachResult += `Index ${index}: ${name}<br>`;
+            });
+
+            
+            let forResult = "";
+            for (let i = 0; i < names.length; i++) {
+                forResult += `Index ${i}: ${names[i]}<br>`;
+            }
+
+           
+            let result = `
+                <strong>Nombre d'éléments initial:</strong> ${initialLength}<br>
+                <strong>Nombre d'éléments après ajout:</strong> ${lengthAfterAddition}<br>
+                <strong>Nombre d'éléments après suppression du premier élément:</strong> ${lengthAfterRemoval}<br>
+                <strong>Tableau après modifications:</strong><br>${names.join(", ")}<br><br>
+                <strong>Boucle avec forEach:</strong><br>${forEachResult}<br>
+                <strong>Boucle avec for:</strong><br>${forResult}
+            `;
+            document.getElementById('result').innerHTML = result;
+        }
+
+       
+        manipulateNames();
+    </script>
+</body>
+</html>

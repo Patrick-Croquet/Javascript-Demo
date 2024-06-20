@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri des Valeurs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tri des Valeurs</h1>
+        <label for="numValues">Nombre de valeurs à générer :</label>
+        <input type="number" id="numValues" min="1" required>
+        
+        <label for="sortType">Type de tri :</label>
+        <select id="sortType">
+            <option value="bubble">Tri à bulles</option>
+            <option value="selection">Tri par sélection</option>
+        </select>
+        
+        <button onclick="sortValues()">Trier les Valeurs</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        'use strict';
+
+        function generateRandomValues(num) {
+            let values = [];
+            for (let i = 0; i < num; i++) {
+                values.push(Math.floor(Math.random() * 100)); 
+            }
+            return values;
+        }
+
+        function bubbleSort(arr) {
+            let len = arr.length;
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                    }
+                }
+            }
+            return arr;
+        }
+
+        function selectionSort(arr) {
+            let len = arr.length;
+            for (let i = 0; i < len; i++) {
+                let minIndex = i;
+                for (let j = i + 1; j < len; j++) {
+                    if (arr[j] < arr[minIndex]) {
+                        minIndex = j;
+                    }
+                }
+                if (minIndex !== i) {
+                    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]; 
+                }
+            }
+            return arr;
+        }
+
+        function sortValues() {
+            const numValues = parseInt(document.getElementById('numValues').value);
+            const sortType = document.getElementById('sortType').value;
+
+            if (isNaN(numValues) || numValues <= 0) {
+                document.getElementById('result').innerHTML = 'Veuillez entrer un nombre valide de valeurs.';
+                return;
+            }
+
+            let values = generateRandomValues(numValues);
+            let sortedValues;
+
+            if (sortType === 'bubble') {
+                sortedValues = bubbleSort([...values]);
+            } else if (sortType === 'selection') {
+                sortedValues = selectionSort([...values]);
+            }
+
+            document.getElementById('result').innerHTML = `
+                <strong>Valeurs générées :</strong> ${values.join(', ')}<br>
+                <strong>Valeurs triées (${sortType === 'bubble' ? 'Tri à bulles' : 'Tri par sélection'}) :</strong> ${sortedValues.join(', ')}
+            `;
+        }
+    </script>
+</body>
+</html>

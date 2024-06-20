@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul du Taux de Participation</title>
+    <script>
+        const seuilSalaire = 1800.0;
+        const majorationSalaire = 0.1;
+        const tauxCelibataire = 0.2;
+        const tauxAutre = 0.25;
+        const tauxParEnfant = 0.15;
+        const maxParticipation = 0.5;
+
+        let reponse;
+        let nbEnfant;
+        let celibataire;
+        let remuneration;
+        let tauxParticipation = 0;
+
+        function calculerTauxParticipation() {
+            reponse = prompt("Si vous êtes célibataire, entrez O, sinon entrez N");
+            celibataire = reponse === "O";
+            reponse = prompt("Combien d'enfants avez-vous ?");
+            nbEnfant = parseInt(reponse);
+            reponse = prompt("Montant de la rémunération : ");
+            remuneration = parseFloat(reponse);
+
+            if (celibataire) {
+                tauxParticipation = tauxCelibataire;
+            } else {
+                tauxParticipation = tauxAutre;
+            }
+
+            tauxParticipation += nbEnfant * tauxParEnfant;
+
+            if (remuneration < seuilSalaire) {
+                tauxParticipation += majorationSalaire;
+            }
+
+            if (tauxParticipation > maxParticipation) {
+                tauxParticipation = maxParticipation;
+            }
+
+            alert('Le taux de participation est de ' + (tauxParticipation * 100).toFixed(2) + '%');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calculerTauxParticipation()">Calculer le Taux de Participation</button>
+</body>
+</html>

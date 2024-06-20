@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul du Taux de Participation</title>
+    <script>
+        const seuilSalaire = 1800.0;
+        const majorationSalaire = 0.1;
+        const tauxCelibataire = 0.2;
+        const tauxAutre = 0.25;
+        const tauxParEnfant = 0.15;
+        const maxParticipation = 0.5;
+
+        function isValidNumber(value) {
+            return !isNaN(value) && value >= 0;
+        }
+
+        function promptForValidInput(promptMessage, validationFunction) {
+            let value;
+            do {
+                value = prompt(promptMessage);
+                if (value === null) {
+                    alert("Vous devez entrer une valeur.");
+                } else if (!validationFunction(value)) {
+                    alert("Valeur invalide. Veuillez réessayer.");
+                }
+            } while (value === null || !validationFunction(value));
+            return value;
+        }
+
+        function calculerTauxParticipation() {
+            let continuer = true;
+            while (continuer) {
+                let reponse = promptForValidInput("Si vous êtes célibataire, entrez O, sinon entrez N", function(value) {
+                    return value === "O" || value === "N";
+                });
+                let celibataire = reponse === "O";
+                
+                reponse = promptForValidInput("Combien d'enfants avez-vous ?", function(value) {
+                    let num = parseInt(value);
+                    return isValidNumber(num);
+                });
+                let nbEnfant = parseInt(reponse);
+                
+                reponse = promptForValidInput("Montant de la rémunération : ", function(value) {
+                    let num = parseFloat(value);
+                    return isValidNumber(num);
+                });
+                let remuneration = parseFloat(reponse);
+
+                let tauxParticipation = celibataire ? tauxCelibataire : tauxAutre;
+                tauxParticipation += nbEnfant * tauxParEnfant;
+
+                if (remuneration < seuilSalaire) {
+                    tauxParticipation += majorationSalaire;
+                }
+
+                if (tauxParticipation > maxParticipation) {
+                    tauxParticipation = maxParticipation;
+                }
+
+                alert('Le taux de participation est de ' + (tauxParticipation * 100).toFixed(2) + '%');
+
+                reponse = promptForValidInput("Autre taux à calculer ? O pour Oui, N pour Non", function(value) {
+                    return value === "O" || value === "N";
+                });
+                continuer = reponse === "O";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calculerTauxParticipation()">Calculer le Taux de Participation</button>
+</body>
+</html>
+
