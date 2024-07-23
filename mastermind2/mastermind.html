@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .game-container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .color-input {
+            margin: 5px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container game-container">
+        <h1 class="mb-4">Bienvenue sur Mastermind</h1>
+        <div class="form-group">
+            <label for="manches">Combien de manches voulez-vous avoir ?</label>
+            <input type="number" class="form-control" id="manches" min="1">
+            <button class="btn btn-primary mt-2" onclick="startGame()">Commencer le jeu</button>
+        </div>
+        <div id="game" style="display: none;">
+            <div id="round-info" class="mt-4"></div>
+            <div id="tries-left" class="mt-3"></div>
+            <div id="inputs" class="mt-3">
+                <input type="text" class="form-control color-input" id="color1" placeholder="Couleur 1 (BLEU, ROUGE, JAUNE, VERT)">
+                <input type="text" class="form-control color-input" id="color2" placeholder="Couleur 2 (BLEU, ROUGE, JAUNE, VERT)">
+                <input type="text" class="form-control color-input" id="color3" placeholder="Couleur 3 (BLEU, ROUGE, JAUNE, VERT)">
+                <input type="text" class="form-control color-input" id="color4" placeholder="Couleur 4 (BLEU, ROUGE, JAUNE, VERT)">
+            </div>
+            <button class="btn btn-success mt-3" onclick="submitColors()">Valider</button>
+            <div class="result mt-4" id="result"></div>
+            <div class="result mt-4" id="final-result"></div>
+        </div>
+    </div>
+    <script src="mastermind.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

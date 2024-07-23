@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .board,
+        .message-box {
+            background-color: #d19065;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid #555;
+            width: 350px;
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .color-selection {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+
+        .current-guess {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #d9d9d9;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #555;
+        }
+
+        .pion {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .attempts {
+            margin-bottom: 20px;
+        }
+
+        .attempt {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .end-message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .form-inline {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #6ad5a8;
+            color: #181818;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #555;
+        }
+
+        .btn-secondary {
+            background-color: #bdc9d3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="board">
+            <div class="title">Mastermind</div>
+            <div id="game-board">
+                <div id="feedback" class="feedback"></div>
+                <div id="attempts" class="attempts"></div>
+            </div>
+            <div class="color-selection">
+                <button class="color-btn" style="background-color: #47b38f;" onclick="addColor('#47b38f')"></button>
+                <button class="color-btn" style="background-color: #fe3f01;" onclick="addColor('#fe3f01')"></button>
+                <button class="color-btn" style="background-color: #ffe100;" onclick="addColor('#ffe100')"></button>
+                <button class="color-btn" style="background-color: #90dce1;" onclick="addColor('#90dce1')"></button>
+            </div>
+            <div id="current-guess" class="current-guess"></div>
+            <form id="guess-form" class="form-inline">
+                <input type="hidden" id="guess" value="">
+                <button type="submit" class="btn">Proposer</button>
+            </form>
+            <button id="reset-button" class="btn btn-secondary" onclick="resetGame()">Réinitialiser le jeu</button>
+        </div>
+        <div class="message-box" id="end-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

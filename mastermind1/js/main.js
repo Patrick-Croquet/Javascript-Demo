@@ -9,6 +9,7 @@ const NB_ESSAIS_MAX = 2;
 
 // Couleurs possibles
 const couleurs = [1, 2, 3, 4];
+let propositionJoueur = [];
 
 // Fonction pour générer une combinaison secrète aléatoire
 function genererCombinaisonSecrete() {
@@ -29,8 +30,8 @@ function verifierProposition(combinaisonSecrete, propositionJoueur) {
   let nbPionsBienPlaces = 0;
   let nbPionsMalPlaces = 0;
   const combinaisonJoueurMarque = Array(LONGUEUR_COMBINAISON).fill(0);
- console.log(combinaisonSecrete);
- console.log(propositionJoueur);
+ //console.log(combinaisonSecrete);
+ //console.log(propositionJoueur);
   // Pions bien placés
   for (let i = 0; i < LONGUEUR_COMBINAISON; i++) {
     if (combinaisonSecrete[i] === propositionJoueur[i]) {
@@ -67,7 +68,7 @@ function jouerManche(combinaisonSecrete) {
     nbEssais < NB_ESSAIS_MAX 
   ) {
     // Proposition du joueur
-    let propositionJoueur = [];
+
     for (let i = 0; i < LONGUEUR_COMBINAISON; i++) {
       while (true) {
         try {
@@ -83,8 +84,12 @@ function jouerManche(combinaisonSecrete) {
           console.error('Erreur : Saisie incorrecte. Veuillez saisir un nombre entier.');
         }
       }
+      console.log(couleur);
       propositionJoueur.push(couleur);
     }
+
+    console.log(combinaisonSecrete);
+    console.log(propositionJoueur);
 
     // Évaluation de la proposition
     const [nbPionsBienPlaces, nbPionsMalPlaces] = verifierProposition(
